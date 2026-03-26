@@ -72,7 +72,7 @@ public class TestingPatternsTest {
         $("[data-test-id='success-notification']").shouldHave(Condition.text("Успешно! Встреча успешно запланирована на " + planningDate),
                 Duration.ofSeconds(15)).shouldBe(Condition.visible);
 
-        // Заплнение другой даты
+        // Заплнение иной даты
         $("[data-test-id='date'] input").press(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE)
                 .setValue(planningDate1);
         $("button .button__text").shouldHave(Condition.text("Запланировать")).click();
