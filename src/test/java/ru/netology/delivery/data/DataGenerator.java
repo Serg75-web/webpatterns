@@ -1,10 +1,12 @@
 package ru.netology.delivery.data;
 
 import com.github.javafaker.Faker;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+
 
 public class DataGenerator {
     private DataGenerator() {
@@ -43,6 +45,7 @@ public class DataGenerator {
     }
 
 
+    @Getter
     public static class UserInfo {
         String city;
         String name;
@@ -54,18 +57,6 @@ public class DataGenerator {
             this.phone = phone;
         }
 
-        public String getCity() {
-            return city;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getPhone() {
-            return phone;
-        }
     }
-
 
 }

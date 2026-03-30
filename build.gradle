@@ -22,8 +22,13 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    implementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
     testImplementation 'com.codeborne:selenide:6.19.1'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
 }
 
 test {

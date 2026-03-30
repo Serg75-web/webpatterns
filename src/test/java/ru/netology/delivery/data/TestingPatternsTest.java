@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import ru.netology.delivery.data.DataGenerator;
+import lombok.Getter;
 
 import static com.codeborne.selenide.Selenide.$;
 import static ru.netology.delivery.data.DataGenerator.generateDate;
@@ -16,36 +17,10 @@ import java.util.Locale;
 
 public class TestingPatternsTest {
 
-    private Faker faker;
 
     @BeforeEach
     void setup() {
         Selenide.open("http://localhost:9999/");
-    }
-
-    @BeforeEach
-    void setupAll() {
-        faker = new Faker(new Locale("ru"));
-    }
-
-    @Test
-    void shouldFaker() {
-        String name = faker.name().fullName();
-        String phone = faker.phoneNumber().phoneNumber();
-        String city = faker.address().cityName();
-        System.out.println(name);
-        System.out.println(phone);
-        System.out.println(city);
-
-    }
-
-    @Test
-    void shouldGenerate() {
-        DataGenerator.UserInfo userInfo = DataGenerator.Registration.generateUser("ru", 4, "dd.MM.yyyy");
-        String name = userInfo.getName();
-        String phone = userInfo.getPhone();
-        String city = userInfo.getCity();
-
     }
 
     @Test
